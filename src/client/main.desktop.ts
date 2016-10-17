@@ -26,37 +26,35 @@ let template: any;
 let menu: any;
 
 /*
-// Configure Tray
-const mb = require('./tray');
-app.on('activate-with-no-open-windows', function () {
-    mb.window.show();
-});
-*/
+ // Configure Tray
+ const mb = require('./tray');
+ app.on('activate-with-no-open-windows', function () {
+ mb.window.show();
+ });
+ */
 // Configure auto-launch
 const AutoLaunch = require('auto-launch');
 const appLauncher = new AutoLaunch({
     name: 'Tockler'
 });
 
-appLauncher.isEnabled().then(function (enabled) {
+appLauncher.isEnabled().then((enabled: boolean) => {
     if (enabled) {
         return;
     }
     console.log('Enabling app launcher');
     return appLauncher.enable()
-}).then(function (err) {
-
-});
+}).then((err: any) =>console.error(err));
 
 // Configure context menu
 /*
-require('electron-context-menu')({
+ require('electron-context-menu')({
 
-});
-*/
+ });
+ */
 
 // Single Instance Check
-var iShouldQuit = app.makeSingleInstance(function (commandLine, workingDirectory) {
+var iShouldQuit = app.makeSingleInstance(() => {
     if (mainWindow) {
         if (mainWindow.isMinimized()) {
             mainWindow.restore();
@@ -73,7 +71,7 @@ if (iShouldQuit) {// && !config.isDev
     mainWindow.close();
     mainWindow = null;
     app.quit();
-    return;
+    //return;
 }
 // Configure chromium
 app.commandLine.appendSwitch('disable-renderer-backgrounding');
@@ -94,7 +92,7 @@ app.on('window-all-closed', () => {
 
 
 const {ipcMain} = require('electron');
-ipcMain.on('close-app', function () {
+ipcMain.on('close-app', () => {
     console.log('Closing app');
     mainWindow.close();
     mainWindow = null;
@@ -105,7 +103,7 @@ app.on('ready', () => {
 
     backgroundService.init();
 
-    global.BackgroundService = backgroundService;
+    // global.BackgroundService = backgroundService;
 
     require('electron').powerMonitor.on('suspend', function () {
         console.log('The system is going to sleep');
