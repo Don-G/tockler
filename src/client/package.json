@@ -1,5 +1,12 @@
 {
-  "name": "angular-seed-advanced",
-  "version": "1.0.0",
-  "main": "main.desktop.js"
+  "name": "Tockler",
+  "version": "2.2.0",
+  "description": "Automatically track applications usage and working time",
+  "main": "main.desktop.js",
+  "author": "Maigo Erit <maigo.erit@gmail.com>",
+  "license": "GPL-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:MayGo/tockler.git"
+  }
 }
