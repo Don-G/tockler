@@ -69,6 +69,8 @@ export class SeedAdvancedConfig extends SeedConfig {
     // for now, using NPM_DEPENDENCIES above to include the bundle
     // this.SYSTEM_CONFIG.paths['ng2-translate/*'] = `${this.APP_BASE}node_modules/ng2-translate/ng2-translate`;
     this.SYSTEM_CONFIG.paths['lodash'] = `${this.APP_BASE}node_modules/lodash/index`;
+    this.SYSTEM_CONFIG.paths['d3'] = `${this.APP_BASE}node_modules/d3/index`;
+    this.SYSTEM_CONFIG.paths['moment'] = `${this.APP_BASE}node_modules/moment/moment`;
 
     // testing support for @ngrx/effects
     this.SYSTEM_CONFIG.paths['@ngrx/effects/testing'] = `node_modules/@ngrx/effects/testing/index`;
@@ -90,6 +92,8 @@ export class SeedAdvancedConfig extends SeedConfig {
     };
     this.SYSTEM_BUILDER_CONFIG.paths['angulartics2'] = `node_modules/angulartics2/index.js`;
     this.SYSTEM_BUILDER_CONFIG.paths['lodash'] = `node_modules/lodash/index.js`;
+    this.SYSTEM_BUILDER_CONFIG.paths['d3'] = `node_modules/d3/index.js`;
+    this.SYSTEM_BUILDER_CONFIG.paths['moment'] = `node_modules/moment/moment.js`;
     // this.SYSTEM_BUILDER_CONFIG.paths['ng2-translate/*'] = `node_modules/ng2-translate/ng2-translate.js`;
     this.SYSTEM_BUILDER_CONFIG.paths['@ngrx/core'] = `node_modules/@ngrx/core/index.js`;
     this.SYSTEM_BUILDER_CONFIG.paths['@ngrx/store'] = `node_modules/@ngrx/store/index.js`;

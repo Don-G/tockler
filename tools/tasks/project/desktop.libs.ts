@@ -9,6 +9,8 @@ export = () => {
     'node_modules/rxjs/**/*',
     'node_modules/angulartics2/**/*',
     'node_modules/lodash/**/*',
+    'node_modules/d3/**/*',
+    'node_modules/moment/**/*',
     'node_modules/ng2-translate/**/*',
     'node_modules/@ngrx/**/*'
   ];
